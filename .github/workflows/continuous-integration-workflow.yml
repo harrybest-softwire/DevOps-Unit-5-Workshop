@@ -7,3 +7,12 @@ jobs:
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
     steps:
     - uses: actions/checkout@v4 # Adds a step to checkout the repository code
+    - uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: install dependencies
+      run: dotnet restore
+    - name: build
+      run: dotnet build --no-restore
+    - name: test
+      run: dotnet test --no-build
