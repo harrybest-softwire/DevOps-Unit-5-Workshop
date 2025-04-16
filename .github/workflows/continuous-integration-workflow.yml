@@ -17,7 +17,7 @@ jobs:
     - name: test
       run: dotnet test --no-build
   build-and-test-webapp:
-    name: Build and test dotnet
+    name: Build and test webapp
     runs-on: ubuntu-latest      # Sets the build environment a machine with the latest Ubuntu installed
     defaults:
       run:
